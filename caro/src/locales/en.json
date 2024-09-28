@@ -1,0 +1,136 @@
+{
+  "appName": "Gomoku Calculator",
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "tabbar": {
+    "game": "Board",
+    "settings": "Settings",
+    "about": "About"
+  },
+  "game": {
+    "new": "New",
+    "balance1": "Find One-step Balanced Move",
+    "balance2": "Find Two-step Balanced Move",
+    "setIndexOrigin": "Index Here",
+    "resetIndexOrigin": "Reset Index",
+    "flip": "Flip",
+    "move": "Move",
+    "info": {
+      "depth": "Depth",
+      "eval": "Eval",
+      "speed": "Speed",
+      "nodes": "Nodes",
+      "bestline": "Bestline",
+      "nbestIndex": "Idx"
+    },
+    "interruptThinking": {
+      "title": "AI is thinking",
+      "msg": "Stop thinking now?"
+    },
+    "swap": {
+      "title": "SWAP",
+      "msg": "AI chose to swap.",
+      "questionTitle": "SWAP?",
+      "questionMsg": "Do you want to swap?"
+    },
+    "forbid": {
+      "title": "Forbid",
+      "msg": "This move is forbidden."
+    },
+    "shotJpg": "Take ScreenShot as JPG",
+    "shotGif": "Take ScreenShot as GIF",
+    "gifDelay": "Enter the delay(ms) of each frame",
+    "gifStart": "Enter the start index",
+    "gifLoading": "Gif is generating...",
+    "saveScreenshot": "Save screenshot to device",
+    "saveScreenshotIOS": "Long press to save screenshot",
+    "currentPos": "Position",
+    "evalChart": "Evaluation Chart",
+    "black": "BLACK",
+    "white": "WHITE"
+  },
+  "setting": {
+    "language": "Language",
+    "thinking": {
+      "timeTitle": "Thinking Time",
+      "turnTime": "Turn time(s)",
+      "matchTime": "Match time(s)",
+      "maxDepth": "Max Depth",
+      "maxNode": "Max Node(M)",
+      "fast": "Fast game(~3 min)",
+      "slow": "Slow game(~15 min)",
+      "analysis": "Analysis(Unlimited Time)",
+      "custom": "Custom",
+      "handicap": "Handicap",
+      "nbest": "Multi PV",
+      "thinkTitle": "Thinking",
+      "threads": "Thread Num",
+      "pondering": "Pondering",
+      "hashSize": "Transposition Table Size",
+      "config": {
+        "title": "Engine Model",
+        "220723": "Latest Model(2022/07/23)",
+        "210901": "History Model(2021/09/01)",
+        "classic": "Classic"
+      },
+      "candrange": {
+        "title": "Candidate Range",
+        "square2": "Square2",
+        "square2line3": "Square2 + Line3",
+        "square3": "Square3",
+        "square3line4": "Square3 + Line4 (Recommended)",
+        "square4": "Square4",
+        "fullboard": "Full Board"
+      }
+    },
+    "board": {
+      "title": "Board",
+      "boardTheme": {
+        "title": "Theme",
+        "XO": "XO",
+        "classic": "Gomoku"
+      },
+      "size": "Board Size",
+      "rule": {
+        "title": "Rule",
+        "gomoku": "Gomoku",
+        "standard": "Standard",
+        "renju": "Renju",
+        "swap1": "Gomoku - SWAP1"
+      },
+      "aiThinkBlack": "AI Plays Black",
+      "aiThinkWhite": "AI Plays White",
+      "clickCheck": {
+        "title": "Click Manner",
+        "direct": "Direct Move",
+        "confirm": "Secondary Confirmation",
+        "slide": "Slide To Move"
+      },
+      "showTitle": "Board Display",
+      "showCoord": "Show Coord",
+      "showAnalysis": "Show Analysis",
+      "showDetail": "Show Detail",
+      "showIndex": "Show Index",
+      "showLastStep": "Highlight Last Step",
+      "showWinline": "Show Winning Line",
+      "showForbid": "Show Forbid",
+      "showPvEval": {
+        "title": "Show PV Evaluation",
+        "none": "Disable",
+        "eval": "Eval",
+        "winrate": "Winrate"
+      },
+      "colorTitle": "Color Scheme",
+      "boardColor": "Board Color",
+      "lastStepColor": "Last Step Color",
+      "winlineColor": "Winning Line Color",
+      "bestMoveColor": "Analysis - Best Move",
+      "thinkingMoveColor": "Analysis - Searching Move",
+      "thoughtMoveColor": "Analysis - Searched Move",
+      "lostMoveColor": "Analysis - Lost Move"
+    },
+    "reset": "Reset all settings"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "appName": "Bàn cờ Caro (Gomoku)",
+  "common": {
+    "confirm": "Xác nhận",
+    "cancel": "Hủy"
+  },
+  "tabbar": {
+    "game": "Bàn Cờ",
+    "settings": "Cài Đặt",
+    "about": "Giới Thiệu"
+  },
+  "game": {
+    "new": "Mới",
+    "balance1": "Tìm Nước Đi Cân Bằng Một Bước",
+    "balance2": "Tìm Nước Đi Cân Bằng Hai Bước",
+    "setIndexOrigin": "Đặt Vị Trí Gốc",
+    "resetIndexOrigin": "Đặt Lại Vị Trí Gốc",
+    "flip": "Lật",
+    "move": "Di chuyển",
+    "info": {
+      "depth": "Độ sâu",
+      "eval": "Đánh giá",
+      "speed": "Tốc độ",
+      "nodes": "Nút",
+      "bestline": "Nước tốt nhất",
+      "nbestIndex": "Vị trí"
+    },
+    "interruptThinking": {
+      "title": "AI đang suy nghĩ",
+      "msg": "Dừng suy nghĩ bây giờ?"
+    },
+    "swap": {
+      "title": "ĐỔI",
+      "msg": "AI đã chọn đổi.",
+      "questionTitle": "ĐỔI?",
+      "questionMsg": "Bạn có muốn đổi không?"
+    },
+    "forbid": {
+      "title": "Cấm",
+      "msg": "Nước đi này bị cấm."
+    },
+    "shotJpg": "Chụp Màn Hình dưới dạng JPG",
+    "shotGif": "Chụp Màn Hình dưới dạng GIF",
+    "gifDelay": "Nhập độ trễ (ms) của mỗi khung hình",
+    "gifStart": "Nhập vị trí bắt đầu",
+    "gifLoading": "Đang tạo GIF...",
+    "saveScreenshot": "Lưu ảnh chụp vào thiết bị",
+    "saveScreenshotIOS": "Nhấn giữ để lưu ảnh chụp",
+    "currentPos": "Danh sách nước đi",
+    "evalChart": "Biểu đồ Đánh giá",
+    "black": "ĐEN",
+    "white": "TRẮNG"
+  },
+  "setting": {
+    "language": "Ngôn ngữ",
+    "thinking": {
+      "timeTitle": "Thời Gian Suy Nghĩ",
+      "turnTime": "Thời gian mỗi lượt (s)",
+      "matchTime": "Thời gian trận đấu (s)",
+      "maxDepth": "Độ sâu tối đa",
+      "maxNode": "Số nút tối đa (triệu)",
+      "fast": "Trận nhanh (~3 phút)",
+      "slow": "Trận chậm (~15 phút)",
+      "analysis": "Phân tích (Thời gian không giới hạn)",
+      "custom": "Tùy chỉnh",
+      "handicap": "Chấp",
+      "nbest": "Nhiều nước PV",
+      "thinkTitle": "Suy nghĩ",
+      "threads": "Số lượng luồng",
+      "pondering": "Suy nghĩ thêm",
+      "hashSize": "Kích thước Bảng Băm",
+      "config": {
+        "title": "Mô hình Máy Tính",
+        "220723": "Mô hình mới nhất (2022/07/23)",
+        "210901": "Mô hình cũ (2021/09/01)",
+        "classic": "Cổ điển"
+      },
+      "candrange": {
+        "title": "Phạm vi Ứng viên",
+        "square2": "Ô 2",
+        "square2line3": "Ô 2 + Dòng 3",
+        "square3": "Ô 3",
+        "square3line4": "Ô 3 + Dòng 4 (Đề xuất)",
+        "square4": "Ô 4",
+        "fullboard": "Toàn Bàn"
+      }
+    },
+    "board": {
+      "title": "Bàn Cờ",
+      "boardTheme": {
+        "title": "Giao diện",
+        "XO": "Bàn cờ Caro",
+        "classic": "Bàn cờ Gomoku"
+      },
+      "size": "Kích thước Bàn",
+      "rule": {
+        "title": "Luật",
+        "gomoku": "Luật tự do (Gomoku)",
+        "standard": "Luật tiêu chuẩn (Standard)",
+        "renju": "Renju",
+        "swap1": "SWAP 1"
+      },
+      "aiThinkBlack": "AI Đánh Đen",
+      "aiThinkWhite": "AI Đánh Trắng",
+      "clickCheck": {
+        "title": "Kiểu Nhấn",
+        "direct": "Nhấn Trực Tiếp",
+        "confirm": "Xác nhận Nước đi",
+        "slide": "Trượt Để Đi"
+      },
+      "showTitle": "Hiển Thị Bàn Cờ",
+      "showCoord": "Hiển Thị Tọa Độ",
+      "showAnalysis": "Hiển Thị Phân Tích",
+      "showDetail": "Hiển Thị Chi Tiết",
+      "showIndex": "Hiển Thị Vị Trí",
+      "showLastStep": "Làm Nổi Bật Nước đi Cuối",
+      "showWinline": "Hiển Thị Đường Thắng",
+      "showForbid": "Hiển Thị Nước đi Cấm",
+      "showPvEval": {
+        "title": "Hiển Thị Đánh Giá PV",
+        "none": "Tắt",
+        "eval": "Đánh Giá",
+        "winrate": "Tỉ Lệ Thắng"
+      },
+      "colorTitle": "Bảng Màu",
+      "boardColor": "Màu Bàn Cờ",
+      "lastStepColor": "Màu Nước Đi Cuối",
+      "winlineColor": "Màu Đường Thắng",
+      "bestMoveColor": "Phân Tích - Nước Đi Tốt Nhất",
+      "thinkingMoveColor": "Phân Tích - Nước Đi Đang Suy Nghĩ",
+      "thoughtMoveColor": "Phân Tích - Nước Đi Đã Tính",
+      "lostMoveColor": "Phân Tích - Nước Đi Thua"
+    },
+    "reset": "Đặt Lại Tất Cả Cài Đặt"
+  }
+}
