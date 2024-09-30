@@ -15,13 +15,28 @@ const getFilePath = (fileName: string) => {
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 720,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false, // Bật tính năng này để sử dụng nodeIntegration
     },
   });
+
+  const handleResize = () => {
+    const [width, height] = win.getSize();
+
+    // Tính toán độ phóng đại dựa trên chiều rộng của cửa sổ
+    let zoomFactor = 1;
+    zoomFactor = width / 2000;
+    zoomFactor = zoomFactor > 1 ? zoomFactor : 1;
+
+    win.webContents.setZoomFactor(zoomFactor);
+  };
+
+  // Lắng nghe sự kiện resize
+  win.on("resize", handleResize);
+  win.webContents.on("did-finish-load", handleResize);
 
   // Tải file HTML từ server
   win.loadURL("http://localhost:3000");
