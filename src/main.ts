@@ -15,12 +15,85 @@ const getFilePath = (fileName: string) => {
 
 let win: BrowserWindow;
 
+function getOpenWindowCount() {
+  const openWindows = BrowserWindow.getAllWindows();
+  const windowCount = openWindows.length;
+  console.log(`Số lượng cửa sổ đang mở: ${windowCount}`);
+  return windowCount;
+}
+
 function createWindow() {
   // Nếu cửa sổ đã tồn tại, chỉ cần chuyển trọng tâm vào nó
-  if (win) {
-    win.focus(); // Chuyển trọng tâm vào cửa sổ hiện có
+  if (BrowserWindow.getAllWindows().length > 0) {
+    BrowserWindow.getAllWindows()[0].focus(); // Chuyển trọng tâm vào cửa sổ hiện có
     return;
   }
+
+  try {
+    // Tạo server HTTP
+    const server = http.createServer((req, res) => {
+      // Lấy tên tệp từ đường dẫn yêu cầu
+      const filePath = getFilePath(
+        req.url === "/" || !req.url ? "index.html" : req.url.substring(1)
+      );
+
+      fs.readFile(filePath, (err, data) => {
+        if (err) {
+          res.writeHead(404);
+          console.log("Duong dan cua tep loi la: ", filePath, err);
+          return res.end("404 Not Found");
+        }
+
+        // Xác định kiểu nội dung dựa trên đuôi tệp
+        const extname = path.extname(filePath);
+        let contentType = "text/html";
+
+        switch (extname) {
+          case ".js":
+            contentType = "application/javascript";
+            break;
+          case ".css":
+            contentType = "text/css";
+            break;
+          case ".json":
+            contentType = "application/json";
+            break;
+          case ".png":
+            contentType = "image/png";
+            break;
+          case ".jpg":
+            contentType = "image/jpg";
+            break;
+          case ".gif":
+            contentType = "image/gif";
+            break;
+          case ".svg":
+            contentType = "image/svg+xml";
+            break;
+        }
+
+        res.writeHead(200, { "Content-Type": contentType });
+        res.end(data);
+      });
+    });
+
+    // Lắng nghe sự kiện lỗi của server
+    server.on("error", (err) => {
+      if (err) {
+        console.log("Cổng 3000 đang được sử dụng.");
+      } else {
+        console.log("Lỗi khi chạy server:", err);
+      }
+    });
+
+    // Khởi động server trên cổng 3000
+    server.listen(3000, () => {
+      console.log("Server is running at http://localhost:3000");
+    });
+  } catch (err) {
+    console.log("Loi khi chay server", err);
+  }
+
   win = new BrowserWindow({
     width: 1280,
     height: 720,
@@ -52,58 +125,6 @@ function createWindow() {
   // Ẩn menu mặc định
   Menu.setApplicationMenu(null);
 }
-
-// Tạo server HTTP
-const server = http.createServer((req, res) => {
-  // Lấy tên tệp từ đường dẫn yêu cầu
-  const filePath = getFilePath(
-    req.url === "/" || !req.url ? "index.html" : req.url.substring(1)
-  );
-
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      console.log("Duong dan cua tep loi la: ", filePath, err);
-      return res.end("404 Not Found");
-    }
-
-    // Xác định kiểu nội dung dựa trên đuôi tệp
-    const extname = path.extname(filePath);
-    let contentType = "text/html";
-
-    switch (extname) {
-      case ".js":
-        contentType = "application/javascript";
-        break;
-      case ".css":
-        contentType = "text/css";
-        break;
-      case ".json":
-        contentType = "application/json";
-        break;
-      case ".png":
-        contentType = "image/png";
-        break;
-      case ".jpg":
-        contentType = "image/jpg";
-        break;
-      case ".gif":
-        contentType = "image/gif";
-        break;
-      case ".svg":
-        contentType = "image/svg+xml";
-        break;
-    }
-
-    res.writeHead(200, { "Content-Type": contentType });
-    res.end(data);
-  });
-});
-
-// Khởi động server trên cổng 3000
-server.listen(3000, () => {
-  console.log("Server is running at http://localhost:3000");
-});
 
 // Khởi động ứng dụng Electron
 app.whenReady().then(() => {

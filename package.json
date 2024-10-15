@@ -20,7 +20,7 @@
     },
     "files": [
       "dist/**/*",
-      "caro/dist/**/*"
+      "caro/build/**/*"
     ]
   },
   "keywords": [],
