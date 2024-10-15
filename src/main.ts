@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, Menu } from "electron";
 import * as http from "http";
 import * as path from "path";
 import * as fs from "fs";
@@ -13,10 +13,18 @@ const getFilePath = (fileName: string) => {
   }
 };
 
+let win: BrowserWindow;
+
 function createWindow() {
-  const win = new BrowserWindow({
+  // Nếu cửa sổ đã tồn tại, chỉ cần chuyển trọng tâm vào nó
+  if (win) {
+    win.focus(); // Chuyển trọng tâm vào cửa sổ hiện có
+    return;
+  }
+  win = new BrowserWindow({
     width: 1280,
     height: 720,
+    icon: path.join(__dirname, "../caro3.ico"), // Đường dẫn đến biểu tượng của bạn
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false, // Bật tính năng này để sử dụng nodeIntegration
@@ -40,6 +48,9 @@ function createWindow() {
 
   // Tải file HTML từ server
   win.loadURL("http://localhost:3000");
+
+  // Ẩn menu mặc định
+  Menu.setApplicationMenu(null);
 }
 
 // Tạo server HTTP

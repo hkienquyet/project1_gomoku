@@ -13,6 +13,7 @@
     "productName": "Bàn cờ Caro",
     "asar": true,
     "target": "nsis",
+    "icon": "dist/caro3.ico",
     "nsis": {
       "allowToChangeInstallationDirectory": true,
       "oneClick": false
@@ -23,9 +24,9 @@
     ]
   },
   "keywords": [],
-  "author": "",
+  "author": "Nhóm Project 1",
   "license": "ISC",
-  "description": "",
+  "description": "Phần mềm Bàn cờ Caro phục vụ mục đích giải trí, học tập.",
   "devDependencies": {
     "@types/electron": "^1.4.38",
     "@types/node": "^22.7.0",
